@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %} 
+
+{% block content %}
+
+
+<h1>Tasks</h1>
+
+{% for y in tareas %}
+<div>
+    <h3>{% if task.done == False %} <i class="fas fa-clock"></i> {% else %}✔ {% endif %}{{y.title}}</h3>
+
+   <p>{{y.description}}</p>
+    <button>
+        ✔Done
+    </button>
+    <button>
+        ╳ Delete
+    </button>
+    <p><h4>Project: {{y.project.name}}</h4></p>
+</div>
+
+{%  endfor %}
+
+{% endblock %}
